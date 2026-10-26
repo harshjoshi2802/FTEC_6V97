@@ -68,9 +68,8 @@ exit cleanly. Logs go to `tracker.log` in the current directory.
 Portfolio names are trimmed but case-sensitive. Creating a portfolio does not
 select it automatically. Buy/sell prices do not overwrite current market prices.
 Money uses `Decimal`; display values are rounded to two decimal places while
-calculations keep decimal precision. Individual nonzero numeric inputs are
-limited to 0.00000001 through 1 trillion and 20 significant digits to reject
-unmanageable input. Zero remains valid for current prices and sell prices.
+calculations keep decimal precision. Zero remains valid for current prices and
+sell prices. Domain objects use ordinary classes with constructors.
 
 ## Manual check
 

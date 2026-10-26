@@ -1,31 +1,30 @@
-from dataclasses import dataclass, field
 from decimal import Decimal
 
 
-@dataclass
 class Asset:
-    ticker: str
-    name: str
+    def __init__(self, ticker, name):
+        self.ticker = ticker
+        self.name = name
 
 
-@dataclass
 class Position:
-    quantity: int = 0
-    average_cost: Decimal = Decimal("0")
+    def __init__(self, quantity=0, average_cost=Decimal("0")):
+        self.quantity = quantity
+        self.average_cost = average_cost
 
 
-@dataclass
 class Trade:
-    side: str
-    ticker: str
-    quantity: int
-    price: Decimal
+    def __init__(self, side, ticker, quantity, price):
+        self.side = side
+        self.ticker = ticker
+        self.quantity = quantity
+        self.price = price
 
 
-@dataclass
 class Portfolio:
-    name: str
-    strategy: str
-    positions: dict = field(default_factory=dict)
-    trades: list = field(default_factory=list)
-    realized_gain: Decimal = Decimal("0")
+    def __init__(self, name, strategy):
+        self.name = name
+        self.strategy = strategy
+        self.positions = {}
+        self.trades = []
+        self.realized_gain = Decimal("0")
